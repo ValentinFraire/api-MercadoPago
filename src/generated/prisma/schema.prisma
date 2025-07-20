@@ -1,0 +1,36 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Payment {
+  id          String         @id @default(auto()) @map("_id") @db.ObjectId
+  userId      String         @db.ObjectId
+  nameUser    String
+  date        String
+  companyName String
+  folio       String
+  plans       String[]       @db.ObjectId // IDs de planes comprados
+  services    String[]       @db.ObjectId // IDs de servicios comprados
+  totalAmount Float
+  paidAmount  Float // Monto restante de payment
+  status      String         @default("pending")
+  notes       String?
+  purchaseId  String // ID de Mercado Pago
+  items       PurchaseItem[]
+}
+
+model PurchaseItem {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  unit_price  Float
+  description String?
+  quantity    Int
+  Payment     Payment? @relation(fields: [paymentId], references: [id])
+  paymentId   String?  @db.ObjectId
+}
