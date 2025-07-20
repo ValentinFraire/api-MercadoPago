@@ -1,4 +1,4 @@
-import { prisma } from "../Lib/prisma.js";
+import { prisma } from "../Lib/Prisma.js";
 
 // Obtener todos los pagos ordenados por fecha descendente
 export const getAllPayments = async (req, res) => {

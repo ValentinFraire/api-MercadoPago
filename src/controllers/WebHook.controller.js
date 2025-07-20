@@ -1,5 +1,5 @@
 import { MercadoPagoConfig } from "mercadopago";
-import { prisma } from "../Lib/prisma.js";
+import { prisma } from "../Lib/Prisma.js";
 
 const mp = new MercadoPagoConfig({
   accessToken: process.env.ACCESS_TOKEN,
