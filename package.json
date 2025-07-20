@@ -1,0 +1,31 @@
+{
+  "name": "mercadopago",
+  "version": "1.0.0",
+  "description": "Api de mercado Pago para diferente negocios ",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node ./src/index.js",
+    "start": "nodemon ./src/index.js",
+    "seed": "npx prisma db seed --preview-feature",
+    "migrate": "npx prisma migrate dev --name init --create-only",
+    "generate": "npx prisma generate",
+    "format": "npx prisma format",
+    "studio": "npx prisma studio",
+    "deploy": "npx prisma deploy"
+  },
+  "author": "Mario Fraire",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^6.11.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mercadopago": "^2.7.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.10"
+  },
+  "devDependencies": {
+    "prisma": "^6.11.1"
+  }
+}
