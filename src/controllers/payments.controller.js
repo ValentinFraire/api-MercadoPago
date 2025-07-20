@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
 import { MercadoPagoConfig, Preference } from 'mercadopago';
-import { prisma } from '../Lib/prisma.js';
+import {Prisma} from '../Lib/Prisma.js'
 
 const client = new MercadoPagoConfig({
   accessToken: process.env.ACCESS_TOKEN,
