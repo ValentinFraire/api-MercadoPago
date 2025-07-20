@@ -84,6 +84,7 @@ export const createOrder = async (req, res) => {
 
     const preference = await new Preference(client).create({ body });
 
+    
     // Guardar en MongoDB vía Prisma
     const newPayment = await prisma.payment.create({
       data: {
