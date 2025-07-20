@@ -12,7 +12,8 @@
     "generate": "npx prisma generate",
     "format": "npx prisma format",
     "studio": "npx prisma studio",
-    "deploy": "npx prisma deploy"
+    "deploy": "npx prisma migrate deploy",
+    "postinstall": "prisma generate"
   },
   "author": "Mario Fraire",
   "license": "ISC",
